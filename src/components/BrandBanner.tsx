@@ -1,5 +1,6 @@
 
 import { Button } from "@/components/ui/button"
+import { Anvil, ArrowRight } from "lucide-react"
 
 export default function BrandBanner() {
   return (

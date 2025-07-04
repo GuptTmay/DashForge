@@ -97,7 +97,7 @@ export function AppSidebar({ actPage, setActPage }: AppSidebarProps) {
   const navigate = useNavigate();
 
   return (
-    <Sidebar>
+    <Sidebar className='h-screen'>
       <SidebarHeader className="flex flex-row items-center justify-around p-4">
         {/* Logo Section */}
         <div className="flex items-center gap-3">

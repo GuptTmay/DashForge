@@ -1,3 +1,4 @@
+import StarbucksImage from '../assets/StarbucksImage.png';
 import {
   Card,
   CardContent,
@@ -7,6 +8,7 @@ import {
 } from '@/components/ui/card';
 import MiniInfoCard from '@/components/MiniInfoCard';
 import indianFlagIcon from '../assets/indianFlagIcon.png';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
   AlertCircle,
   CalendarIcon,
@@ -17,12 +19,16 @@ import {
   ChevronDown,
   ChevronUp,
   CircleCheckBig,
+  Clock,
   Files,
+  Fingerprint,
   Flame,
   GripVertical,
   LucideDollarSign,
   MoreHorizontal,
+  PlayCircleIcon,
   Timer,
+  Utensils,
   XCircle,
 } from 'lucide-react';
 import { Checkbox } from '@/components/ui/checkbox';
@@ -142,6 +148,7 @@ const tasksData = [
   { name: 'Promotional LP', checked: true },
 ];
 
+
 export const Dashboard = () => {
   const [tasksInfo, setTasksInfo] = useState(tasksData);
 
@@ -158,23 +165,11 @@ export const Dashboard = () => {
           desc="Spend This Month"
           title="$682.5"
         />
-        <Card className="bg-background flex flex-row items-center gap-3 border border-gray-800 px-4 py-3 shadow-md sm:w-[12rem]">
-          <div className="flex flex-col">
-            <CardDescription className="text-muted-foreground text-xs">
-              Sales
-            </CardDescription>
-            <CardTitle className="text-lg">$574.34</CardTitle>
-            <CardDescription className="text-muted-foreground text-[10px]">
-              <span className="font-bold text-green-500">+23%</span> since last
-              month
-            </CardDescription>
-          </div>
-        </Card>
         <MiniInfoCard
           imageSrc={indianFlagIcon}
           desc="Your Balance"
           title="$1000"
-          className="flex-row-reverse justify-around"
+          className="bg-background sm:flex-row-reverse sm:justify-around border border-gray-800 shadow-md"
         />
         <MiniInfoCard icon={CircleCheckBig} desc="Your Tasks" title="154" />
         <MiniInfoCard icon={Files} desc="Your Projects" title="2951" />
@@ -430,7 +425,7 @@ export const Dashboard = () => {
 
       <div className="flex flex-col gap-6 sm:flex-row">
         <Card className="flex-1 pb-0">
-          <CardHeader className="flex flex-1 gap-2">
+          <CardHeader className="flex flex-1 gap-4">
             <Button
               variant="outline"
               disabled
@@ -451,32 +446,111 @@ export const Dashboard = () => {
           </CardHeader>
           <CardContent>
             <CardTitle>
-              <h2 className='text-3xl'>What do you need to know to create better products?</h2>
+              <h2 className="text-3xl">
+                What do you need to know to create better products?
+              </h2>
             </CardTitle>
           </CardContent>
-          <div className='w-full h-10 rounded-b-xl bg-slate-400/30'>
-              <div className='flex px-12 py-4 gap-6'>
-                <div>
-                   <Timer className='text-green-400'></Timer> 
-                </div>
+
+          <div className="flex w-full flex-col items-center justify-between rounded-b-xl bg-slate-400/30">
+            <div className="flex w-full gap-6 px-6 py-4">
+              <div className="flex items-center gap-2">
+                <Timer className="text-green-400"></Timer>
+                <p>85 Mins</p>
               </div>
+              <div className="flex items-center gap-2">
+                <PlayCircleIcon className="text-red-400" />
+                <p>Video Format</p>
+              </div>
+            </div>
+
+            <div className="flex w-full items-center justify-between p-6">
+              <div className="*:data-[slot=avatar]:ring-background/50 flex -space-x-2 *:data-[slot=avatar]:ring-1">
+                <Avatar>
+                  <AvatarImage
+                    alt="avatar"
+                    src={`https://i.pravatar.cc/150?img=1`}
+                  />
+                  <AvatarFallback>Avatar1</AvatarFallback>
+                </Avatar>
+                <Avatar>
+                  <AvatarImage
+                    alt="avatar"
+                    src={`https://i.pravatar.cc/150?img=2`}
+                  />
+                  <AvatarFallback>Avatar2</AvatarFallback>
+                </Avatar>
+                <Avatar>
+                  <AvatarImage
+                    alt="avatar"
+                    src={`https://i.pravatar.cc/150?img=3`}
+                  />
+                  <AvatarFallback>Avatar3</AvatarFallback>
+                </Avatar>
+                <Avatar>
+                  <AvatarImage
+                    alt="avatar"
+                    src={`https://i.pravatar.cc/150?img=4`}
+                  />
+                  <AvatarFallback>Avatar4</AvatarFallback>
+                </Avatar>
+                <Avatar>
+                  <AvatarImage alt="avatar" />
+                  <AvatarFallback className="text-sm font-semibold">
+                    15+
+                  </AvatarFallback>
+                </Avatar>
+              </div>
+              <Button>Get started</Button>
+            </div>
           </div>
         </Card>
 
         <div className="flex flex-1 gap-6">
           <Card className="flex-1">
-            <CardHeader className="flex flex-1 gap-2">
-              <Button variant="outline" disabled size="icon">
-                <Flame></Flame>
-              </Button>
-            </CardHeader>
+            <CardContent className="flex h-full flex-col items-start">
+              <Fingerprint strokeWidth="1.5px" className="h-[5rem] w-[5rem]" />
+              <CardTitle className="mt-6 text-xl tracking-tight">
+                Control card security in-app with a tap
+              </CardTitle>
+              <CardDescription className="mt-2 text-xs">
+                Discover our cards benifits, with one tap
+              </CardDescription>
+              <Button className="mt-auto w-full">Card</Button>
+            </CardContent>
           </Card>
-          <Card className="flex-1">
-            <CardHeader className="flex flex-1 gap-2">
-              <Button variant="outline" disabled size="icon">
-                <Flame></Flame>
-              </Button>
+
+          <Card className="flex flex-1 flex-col">
+            <CardHeader className="relative p-2">
+              <img
+                src={StarbucksImage}
+                alt="Starbucks"
+                className="h-full w-full rounded-3xl object-cover"
+              />
+              <div className="absolute top-4 right-4">
+                <Button variant="outline" size="icon">
+                  <Clock />
+                </Button>
+              </div>
             </CardHeader>
+
+            <CardContent className="relative rounded-b-2xl p-4">
+              <div className="absolute -top-16 left-6">
+                <img
+                  src="https://creative.starbucks.com/images/logos/logo-1987.png"
+                  alt="logo"
+                  className="h-14 w-14 rounded-full border"
+                />
+              </div>
+
+              <CardTitle className="mt-6 text-2xl font-semibold">
+                Starbucks
+              </CardTitle>
+              <CardDescription className="text-md flex items-center gap-2">
+                <Utensils />
+                <span>10% cashback & off</span>
+              </CardDescription>
+            </CardContent>
           </Card>
         </div>
       </div>

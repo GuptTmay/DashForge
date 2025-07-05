@@ -1,4 +1,4 @@
 # DashForge
 Modern looking responsive Dashboard made using Shadcn. 
 
-Demo - [Coming soon](https://www.google.com)
+Demo - [DashForge](https://dashforge-tg3.vercel.app/)

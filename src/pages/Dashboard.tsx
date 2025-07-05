@@ -10,11 +10,9 @@ import MiniInfoCard from '@/components/MiniInfoCard';
 import indianFlagIcon from '../assets/indianFlagIcon.png';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
-  AlertCircle,
   CalendarIcon,
   ChartNoAxesColumn,
   ChartNoAxesColumnIcon,
-  CheckCircle,
   CheckCircle2,
   ChevronDown,
   ChevronUp,
@@ -29,7 +27,6 @@ import {
   PlayCircleIcon,
   Timer,
   Utensils,
-  XCircle,
 } from 'lucide-react';
 import { Checkbox } from '@/components/ui/checkbox';
 import {
@@ -61,6 +58,8 @@ import { Progress } from '@/components/ui/progress';
 import { useState } from 'react';
 import { DropdownWrapper } from '@/components/DropdownWrapper';
 import { MyCalendar } from '@/components/MyCalendar';
+import { ComplexTableData } from '@/lib/data';
+import { returnStatus } from '@/lib/utilsFunc';
 
 const tableData = [
   {
@@ -102,41 +101,6 @@ const tableData = [
     quantity: '258',
     date: '17.Dec.2021',
     checked: false,
-  },
-];
-
-const Status = {
-  APPROVED: 'Approved',
-  DISABLE: 'Disable',
-  ERROR: 'Error',
-} as const;
-type Status = (typeof Status)[keyof typeof Status];
-
-const complexTableData = [
-  {
-    name: 'Sales PRO',
-    status: Status.APPROVED,
-    date: '18 Apr 2022',
-    progress: 80,
-  },
-  {
-    name: 'Inventory Free',
-    status: Status.DISABLE,
-    date: '18 Apr 2022',
-    progress: 40,
-  },
-  {
-    name: 'Marketplace',
-    status: Status.ERROR,
-    date: '20 May 2021',
-    progress: 90,
-  },
-  {
-    name: 'Weekly Updates',
-    status: Status.APPROVED,
-    statusColor: 'green',
-    date: '12 Jul 2021',
-    progress: 60,
   },
 ];
 
@@ -346,7 +310,7 @@ export const Dashboard = () => {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {complexTableData.map((row, index) => (
+                {ComplexTableData.map((row, index) => (
                   <TableRow key={index}>
                     <TableCell className="flex items-start gap-3 font-medium">
                       {row.name}
@@ -557,31 +521,3 @@ export const Dashboard = () => {
     </div>
   );
 };
-
-function returnStatus(stat: Status) {
-  switch (stat) {
-    case Status.APPROVED:
-      return (
-        <div className="flex items-center gap-2">
-          <CheckCircle className="text-green-500" />
-          <p>{Status.APPROVED}</p>
-        </div>
-      );
-    case Status.DISABLE:
-      return (
-        <div className="flex items-center gap-2">
-          <AlertCircle className="text-yellow-500" />
-          <p>{Status.DISABLE}</p>
-        </div>
-      );
-    case Status.ERROR:
-      return (
-        <div className="flex items-center gap-2">
-          <XCircle className="text-red-500" />
-          <p>{Status.ERROR}</p>
-        </div>
-      );
-    default:
-      return null;
-  }
-}

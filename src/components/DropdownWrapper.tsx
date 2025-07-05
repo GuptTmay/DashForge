@@ -13,12 +13,11 @@ interface DropdownWrapperProps {
 }
 
 
-
 export const DropdownWrapper = (props: DropdownWrapperProps) => {
   return (
     <div>
       <DropdownMenu>
-        <DropdownMenuTrigger className='flex items-center cursor-pointer'>
+        <DropdownMenuTrigger asChild className='flex items-center cursor-pointer'>
            { props.children } 
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-30">

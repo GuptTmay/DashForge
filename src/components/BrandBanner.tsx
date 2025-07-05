@@ -1,8 +1,10 @@
 
 import { Button } from "@/components/ui/button"
 import { Anvil, ArrowRight } from "lucide-react"
+import { useNavigate } from "react-router-dom"
 
 export default function BrandBanner() {
+  const navigate = useNavigate();
   return (
     <div className="flex h-screen w-full items-center justify-center rounded-bl-[400px] bg-gradient-to-bl flex-1 from-background to-secondary p-8">
       <div className="max-w-md text-center">
@@ -29,7 +31,7 @@ export default function BrandBanner() {
         </div>
 
         {/* Call to Action */}
-        <Button variant='secondary' className="ring-neutral-500 ring-1 hover:ring-neutral-600">
+        <Button variant='secondary' onClick={() => navigate("/")} className="ring-neutral-500 ring-1 hover:ring-neutral-600">
           Get Started
           <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
         </Button>

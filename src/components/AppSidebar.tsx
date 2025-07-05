@@ -62,7 +62,8 @@ const items = [
   {
     id: 5,
     title: 'Profile',
-    url: '/profile',
+    // url: '/profile',
+    url: '/404',
     icon: UserRound,
   },
   {

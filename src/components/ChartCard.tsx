@@ -15,7 +15,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
   type ChartConfig,
-} from '@/components/ui/chart';
+} from '@/components/ui/chart.jsx';
 
 const chartData = [
   { month: 'SEP', spent: 1900, budget: 1000 },

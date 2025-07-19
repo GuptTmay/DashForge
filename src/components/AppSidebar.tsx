@@ -106,7 +106,7 @@ export function AppSidebar({ actPage, setActPage }: AppSidebarProps) {
             <Anvil className="h-6 w-6 text-gray-300" />
           </div>
           <div>
-            <h1 className="text-lg font-bold tracking-tight text-white">
+            <h1 className="text-lg font-bold tracking-tight dark:text-white">
               DashForge
             </h1>
             <p className="text-xs text-gray-400">Feels Like God's Eyes</p>

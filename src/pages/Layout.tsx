@@ -19,7 +19,7 @@ const Layout = () => {
         <AppSidebar actPage={actPage} setActPage={setActPage} />
 
         <div className="flex flex-1 h-full flex-col justify-between">
-          <header className="sticky top-0 z-10 flex w-full items-center justify-between border-b bg-black/60 p-4 backdrop-blur-xs">
+          <header className="sticky top-0 z-10 flex w-full items-center justify-between border-b dark:bg-black/60 bg-black/10 p-4 backdrop-blur-xs">
             <div className="flex items-center gap-4">
               <SidebarTrigger />
               <div className="flex flex-col">

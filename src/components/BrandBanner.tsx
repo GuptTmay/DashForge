@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom"
 export default function BrandBanner() {
   const navigate = useNavigate();
   return (
-    <div className="flex h-screen w-full items-center justify-center rounded-bl-[400px] bg-gradient-to-bl flex-1 from-background to-secondary p-8">
+    <div className="hidden lg:flex h-screen w-full items-center justify-center rounded-bl-[400px] bg-gradient-to-bl flex-1 from-primary to-primary-foreground dark:from-background dark:to-secondary p-8">
       <div className="max-w-md text-center">
         {/* Logo/Icon */}
         <div className="mb-6 flex justify-center">
